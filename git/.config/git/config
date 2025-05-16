@@ -1,0 +1,8 @@
+[user]
+  name = Koenraad
+  email = koenemans@proton.me
+  signingkey = 7D0334EF 
+[commit]
+  gpgsign = true
+[log]
+  showSignature = true
