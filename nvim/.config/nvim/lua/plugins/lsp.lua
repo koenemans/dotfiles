@@ -6,7 +6,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
-		"L3MON4D3/LuaSnip",
+		{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
@@ -32,7 +32,8 @@ return {
 
 		require('mason').setup({})
 		require('mason-lspconfig').setup({
-			ensure_installed = { 'lua_ls', 'html', 'cssls', 'jsonls', 'marksman', 'ts_ls', 'eslint', 'angularls' },
+			ensure_installed = { 'lua_ls', 'html', 'cssls', 'jsonls', 'marksman', 'ts_ls', 'pyright' },
+			automatic_enable = { 'lua_ls', 'html', 'cssls', 'jsonls', 'marksman', 'ts_ls', 'pyright' },
 			handlers = {
 				function(server_name)
 					require('lspconfig')[server_name].setup({})
@@ -48,16 +49,6 @@ return {
 					}
 				}
 			end,
-			eslint = function()
-				require("eslint").setup {
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							buffer = bufnr,
-							command = "EslintFixAll"
-						})
-					end,
-				}
-			end
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
