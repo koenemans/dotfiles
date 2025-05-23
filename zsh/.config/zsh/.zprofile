@@ -11,6 +11,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPG_TTY=$(tty)
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PYTHON_HISTORY="$XDG_STATE_HOME/python/python_history"
 
 export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@22/bin:$PATH"
 
