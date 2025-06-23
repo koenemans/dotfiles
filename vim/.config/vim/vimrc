@@ -4,7 +4,6 @@ filetype plugin indent on
 let g:netrw_home=$XDG_STATE_HOME.'/vim'
 
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
-set cursorline
 set ruler
 set relativenumber
 set tabstop=2
