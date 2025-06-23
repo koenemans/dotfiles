@@ -5,13 +5,6 @@ autoload -U compinit
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
-. $HOME/.local/bin/git-prompt.sh
-
-export GIT_PS1_SHOWSTASHSTATE=1 #'$'
-export GIT_PS1_SHOWUNTRACKEDFILES=1 #'%'
-export GIT_PS1_SHOWDIRTYSTATE=1 #'*': unstaged, '+': staged
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWUPSTREAM="auto" #'<': behind, '>': ahead, '<>': diverged, '=': no diff
-export GIT_PS1_SHOWCONFLICTSTATE="yes"
-
-precmd () { __git_ps1 "%n" ":%~$ " "(%s)" }
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
