@@ -1,0 +1,10 @@
+fd
+gnupg
+less
+lua-language-server
+neovim
+pyvim
+ripgrep
+stow
+tree
+wget
